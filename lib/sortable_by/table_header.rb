@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module SortableBy
   class TableHeader
     attr_reader :context
@@ -6,11 +8,12 @@ module SortableBy
     # Forward view helper methods to the view context
     delegate :concat, :content_tag, :link_to, to: :context
 
-    def initialize(path_helper:, model: nil, params: {}, context:)
+    def initialize(path_helper:, model: nil, params: {}, context:, icon:)
       @path_helper = path_helper
       @model = model
       @params = params
       @context = context
+      @icon = icon.to_sym
     end
 
     def capture(block)
@@ -85,8 +88,20 @@ module SortableBy
 
     def sort_arrow_for_attribute(attribute)
       return '' unless @params[:sort] == attribute.to_s
-      arrow_class = current_direction == 'asc' ? 'up' : 'down'
-      content_tag(:span, '', class: "glyphicon glyphicon-arrow-#{arrow_class}")
+      IconStrategy.send(@icon, context, current_direction) if IconStrategy.respond_to?(@icon)
+    end
+  end
+
+  module IconStrategy
+
+    def self.fontawesome(context, dir)
+      icon_class = dir == 'asc' ? 'fa-caret-up' : 'fa-caret-down'
+      context.content_tag :i, '', class: "fa #{icon_class}"
+    end
+
+    def self.glyph(context, dir)
+      icon_class = dir == 'asc' ? 'up' : 'down'
+      context.content_tag(:span, '', class: "glyphicon glyphicon-arrow-#{icon_class}")
     end
   end
 end
