@@ -23,11 +23,11 @@ module SortableBy
     #
     # <%= t.header :name, label: 'Full Name' %>
     #
-    def sortable_table_header(path_helper, model: nil, permit: [], icon: :glyph, &block)
+    def sortable_table_header(path_helper, model: nil, permit: [], icon: SortableBy.icon_strategy, &block)
       header = SortableBy::TableHeader.new(
         path_helper: path_helper,
         model: model,
-        params: params.permit(permit.concat([:sort, :dir, :search, :tab])),
+        params: params.permit(permit.concat(SortableBy.params_list)),
         context: self,
         icon: icon)
       header.capture(block) if block
