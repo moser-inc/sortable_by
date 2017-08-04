@@ -17,7 +17,7 @@ connect those headers to a back end ActiveRecord sort query"
 
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
 
-  s.add_dependency 'rails', '>= 5.1.2'
+  s.add_dependency 'rails', '>= 5.0'
 
   s.add_development_dependency 'pg'
   s.add_development_dependency 'rspec-rails'
