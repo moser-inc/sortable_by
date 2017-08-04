@@ -50,3 +50,21 @@ end
 ```
 
 See [params.rb](./app/controllers/concerns/sortable_by/params.rb) for options.
+
+### Icon Support
+
+[Font Awesome](http://fontawesome.io) and [Glyphicons](http://getbootstrap.com/components/#glyphicons) are both supported by default. You can also add your own icon strategy.
+
+```ruby
+module SortableBy::IconStrategy
+  def self.custom(context, dir)
+    "test: #{dir}"
+  end
+end
+```
+
+```erb
+<%= sortable_table_header :users_path, icon: :custom do |t| %>
+  ...
+<% end %>
+```
