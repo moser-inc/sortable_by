@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    sortable_by (0.1.0)
+    sortable_by (1.0)
       rails (>= 5.0)
 
 GEM
