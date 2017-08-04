@@ -29,6 +29,8 @@ In your view, the `sortable_table_header` helper method will generate a `<thead>
 <% end %>
 ```
 
+See [table_helper.rb](./app/helpers/sortable_by/table_helper.rb) for options.
+
 In your controller, include the `SortableBy::Params` module and use the `sortable_by` method to configure sorting attributes.
 
 ```ruby
@@ -49,3 +51,5 @@ class MyController < ApplicationController
   end
 end
 ```
+
+See [params.rb](./app/controllers/concerns/sortable_by/params.rb) for options.
