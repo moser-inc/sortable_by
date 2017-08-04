@@ -1,4 +1,4 @@
-require "sortable_by/engine"
+require 'sortable_by/engine'
 
 module SortableBy
 end
