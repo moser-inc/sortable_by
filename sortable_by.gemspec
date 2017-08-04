@@ -11,8 +11,8 @@ Gem::Specification.new do |s|
   s.email       = ['greg.woods@moserit.com']
   s.homepage    = 'https://github.com/moser-inc/sortable_by'
   s.summary     = 'Simple tool for sorting tables of data in rails'
-  s.description = "This gem adds capabilities to create sortable table headers\
-connect those headers to a back end ActiveRecord sort query"
+  s.description = "Adds capabilities to create sortable table headers\
+ and connect them to an ActiveRecord query"
   s.license     = 'MIT'
 
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']

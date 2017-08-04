@@ -39,7 +39,7 @@ module SortableBy
     end
 
     def to_html
-      content_tag :thead, to_row, class: 'tb-table-header'
+      content_tag :thead, to_row, class: 'sortable-table-header'
     end
 
     private

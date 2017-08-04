@@ -3,7 +3,7 @@ require 'rails_helper'
 describe SortableBy::TableHelper, type: :helper do
   it 'returns a table header with rows' do
     result = helper.sortable_table_header(:users_path)
-    expect(result).to include('<thead class="tb-table-header"><tr></tr></thead>')
+    expect(result).to include('<thead class="sortable-table-header"><tr></tr></thead>')
     expect(result).to include('</thead>')
   end
 
