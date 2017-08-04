@@ -3,7 +3,6 @@ require 'rails_helper'
 describe SortableBy::Params, type: :controller do
 
   controller(ActionController::Base) do
-    include SortableBy::Params
     sortable_by :first_name, :last_name, :email,
                 display_name: [:first_name, :last_name],
                 birth_date: 'user_birthdays.date :dir',

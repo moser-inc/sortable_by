@@ -31,13 +31,10 @@ In your view, the `sortable_table_header` helper method will generate a `<thead>
 
 See [table_helper.rb](./app/helpers/sortable_by/table_helper.rb) for options.
 
-In your controller, include the `SortableBy::Params` module and use the `sortable_by` method to configure sorting attributes.
+In your controller, use the `sortable_by` method to configure sorting attributes.
 
 ```ruby
 class MyController < ApplicationController
-  # You need to include the module
-  include SortableBy::Params
-
   # Configure the sortable attributes
   sortable_by :email,                               # A basic sort
               full_name: [:last_name, :first_name], # This will sort on two columns
