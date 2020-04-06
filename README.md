@@ -15,6 +15,13 @@ And then execute:
 $ bundle install
 ```
 
+Include the module in your controllers:
+```ruby
+class ApplicationController < ActionController::Base
+  include SortableBy::Params
+end
+```
+
 ### Example Usage
 
 In your view, the `sortable_table_header` helper method will generate a `<thead>` element with header tags.

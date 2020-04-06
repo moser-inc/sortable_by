@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe SortableBy::Params, type: :controller do
 
-  controller(ActionController::Base) do
+  controller(ApplicationController) do
     sortable_by :first_name, :last_name, :email,
                 display_name: [:first_name, :last_name],
                 birth_date: 'user_birthdays.date :dir',
