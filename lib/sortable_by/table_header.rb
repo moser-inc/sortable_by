@@ -8,7 +8,7 @@ module SortableBy
     # Forward view helper methods to the view context
     delegate :concat, :content_tag, :link_to, to: :context
 
-    def initialize(path_helper:, model: nil, params: {}, context:, icon:)
+    def initialize(path_helper:, context:, icon:, model: nil, params: {})
       @path_helper = path_helper
       @model = model
       @params = params
@@ -88,6 +88,7 @@ module SortableBy
 
     def sort_arrow_for_attribute(attribute)
       return '' unless @params[:sort] == attribute.to_s
+
       IconStrategy.send(@icon, context, current_direction) if IconStrategy.respond_to?(@icon)
     end
   end
