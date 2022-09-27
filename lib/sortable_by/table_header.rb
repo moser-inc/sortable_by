@@ -104,5 +104,10 @@ module SortableBy
       icon_class = dir == 'asc' ? 'up' : 'down'
       context.content_tag(:span, '', class: "glyphicon glyphicon-arrow-#{icon_class}")
     end
+
+    def self.basic(context, dir)
+      text = dir == 'desc' ? '▼' : '▲'
+      context.content_tag(:span, text, class: 'sortable-direction')
+    end
   end
 end
