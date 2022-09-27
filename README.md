@@ -35,8 +35,6 @@ In your controller, use the `sortable_by` method to configure sorting attributes
 
 ```ruby
 class MyController < ApplicationController
-  include SortableBy::Params
-
   # Configure the sortable attributes
   sortable_by :email,                               # A basic sort
               full_name: [:last_name, :first_name], # This will sort on two columns
